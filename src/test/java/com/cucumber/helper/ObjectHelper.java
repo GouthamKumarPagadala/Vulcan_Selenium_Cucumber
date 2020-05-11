@@ -9,7 +9,15 @@ public class ObjectHelper {
 	}
 	
 	protected static By Button(String fieldName) {
-		return By.xpath("//input[@class='button' and @value='"+fieldName+"']");
+		return By.xpath("//button[@type='submit' and contains(., '"+fieldName+"')]");
+	}
+	
+	
+	
+	protected static By InputBox_With_name(String fieldName) {
+		return By.xpath("//input[@name='"+fieldName+"']");
 	}
 
 }
+
+

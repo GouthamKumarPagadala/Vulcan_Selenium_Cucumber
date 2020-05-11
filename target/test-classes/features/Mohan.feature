@@ -6,9 +6,9 @@ Feature: Datatable Verification
   Scenario Outline: To veriy the last transaction
     Given User is loggedin to the application with the  "<url>" , "<username>" and "<password>" in Browser
     And A fund transer of rs "<amount>" has been done betweeb the same account
-    When Accouct Details Page is displayed
+    When The user opens the statement page
     And The Statement is sorted for the last Done transaction
-    Then User verifies that the last transaction "<amount">
+    Then User verifies that the last transaction "<amount>"
     And Logs out of the application
 
     Examples: 
@@ -20,7 +20,7 @@ Feature: Datatable Verification
     Given User is loggedin to the application with the  "<url>" , "<username>" and "<password>" in Browser
     When The user opens the statement page
     And The Statement is sorted for the last Done transaction
-    Then User verifies that the last transaction "<amount">
+    Then User verifies last transaction amount and the balance
     And Logs out of the application
 
     Examples: 

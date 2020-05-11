@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.enumerations.BrowserType;
 import com.manager.DriverManager;
@@ -46,6 +47,11 @@ public class UserActions {
 	public boolean isDisplayed(By Locator) {
 		return driver.findElement(Locator).isDisplayed();
 	}
+	
+	
+	public String getText (By Locator) {
+		return driver.findElement(Locator).getText();
+	}
 
 	public boolean isEnabled(By Locator) {
 		return driver.findElement(Locator).isEnabled();
@@ -57,6 +63,11 @@ public class UserActions {
 
 	public void Click(By Locator) {
 		driver.findElement(Locator).click();
+	}
+	
+	public void selectromDropDown(By Locator, String text ) {
+		Select element = new Select(driver.findElement(Locator));
+		element.selectByVisibleText(text);
 	}
 
 	public void SendKeys(By Locator, String text) {
