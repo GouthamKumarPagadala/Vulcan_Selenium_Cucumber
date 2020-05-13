@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "classpath:Features" }, glue = { "classpath:com.cucumber.stepdefinitions",
 		"classpath:com.cucumber.helper" }, tags = {
-				"@smoke" }, strict = true, monochrome = true, dryRun = true, plugin = { "pretty", "html:target/reports",
+				"@Desalin" }, strict = true, monochrome = true, dryRun = true, plugin = { "pretty", "html:target/reports",
 						"json:target/cucumber.json", "junit:target/cucumber.xml", "rerun:target/rerun.txt" }
 
 )

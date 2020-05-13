@@ -1,5 +1,9 @@
 package com.cucumber.pageobjects;
 
-public class AccountSummary {
+import org.openqa.selenium.By;
+
+import com.cucumber.helper.ObjectHelper;
+
+public class AccountSummary extends ObjectHelper{
 
 }

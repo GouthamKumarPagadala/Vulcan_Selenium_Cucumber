@@ -1,4 +1,4 @@
-@FullSuite
+@FullSuite, @Mohan
 Feature: Datatable Verification
   To Check after every transaction that the correct account has been transfered
 

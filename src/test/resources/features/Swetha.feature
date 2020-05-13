@@ -1,28 +1,18 @@
-@FullSuite
-Feature: Login with Valid Credentials and Logout
-  To Check application is allowing user to perform login with valid credentials and logout from the application
+Feature: To Someone else
+  To Check application is allowing user to transfer amount to someone else account
 
   @smokeTest, @Regression
-  Scenario Outline: To Verify the Login with Valid Credentials
+  Scenario Outline: To Verify transfer of amount to another account
     Given User Launched "<url>" in Browser
-    And Application base page is displayed with Login Username and Password Fields
     When User enters Username : "<username>" , Password : "<password>"
     And Clicks on the submit button
     Then User Verifies the application is logged in successfully
+    And User clicks on To some Else tab under Transfer menu
+    And Application base page is displayed with the fields Recipient details, Account Type, Amount field
+    When User selects the  Receipient, Account Type , enters "<Amount>"
+    And Clicks on Transter button
+    Then Amount should be debited from the Account
 
     Examples: 
-      | url                                    | username | password   |
-      | https://parabank.parasoft.com/parabank | mohan    | 9876543210 |
-    
-  @Regression
-  Scenario Outline: To Verify the Login with Valid Credentials
-    Given User Launched "<url>" in Browser
-    And Application base page is displayed with Login Username and Password Fields
-    When User enters Username : "<username>" , Password : "<password>"
-    And Clicks on the submit button
-    Then User Verifies the application is logged in successfully
-
-    Examples: 
-      | url                                    | username | password   |
-      | https://parabank.parasoft.com/parabank | mohan    | 9876543210 |
-        
+      | url                                        | username | password   | Amount |
+      | http://elastic.rapidtestpro.com:8086/index | labuser  | labuser@01 |     50 |

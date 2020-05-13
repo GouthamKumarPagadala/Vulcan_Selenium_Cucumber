@@ -32,6 +32,12 @@ public class UserActions {
 		driver.get(URL);
 	}
 
+	public void SelectByVisible_Text(By Locator, String text) {
+		WebElement element = driver.findElement(Locator);
+		Select sc = new Select(element);
+		sc.selectByVisibleText(text);
+	}
+
 	public void CaptureScreenshot(Scenario scenario, String text) {
 		try {
 			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -47,9 +53,8 @@ public class UserActions {
 	public boolean isDisplayed(By Locator) {
 		return driver.findElement(Locator).isDisplayed();
 	}
-	
-	
-	public String getText (By Locator) {
+
+	public String getText(By Locator) {
 		return driver.findElement(Locator).getText();
 	}
 
@@ -64,8 +69,8 @@ public class UserActions {
 	public void Click(By Locator) {
 		driver.findElement(Locator).click();
 	}
-	
-	public void selectromDropDown(By Locator, String text ) {
+
+	public void selectromDropDown(By Locator, String text) {
 		Select element = new Select(driver.findElement(Locator));
 		element.selectByVisibleText(text);
 	}
@@ -102,6 +107,12 @@ public class UserActions {
 
 	public void Quit() {
 		driver.quit();
+
+	}
+
+	public void selectFromDropdownsendKeys(By by, String string) {
+		Select sc = new Select(driver.findElement(by));
+		sc.selectByVisibleText(string);
 
 	}
 
